@@ -49,13 +49,13 @@ def pgv_cc_proto_library(
         srcs = [":" + name + "_validate"],
         deps = cc_deps + [
             ":" + name + "_cc_proto",
-            "@com_envoyproxy_protoc_gen_validate//validate:cc_validate",
-            "@com_envoyproxy_protoc_gen_validate//validate:validate_cc",
+            "@com_circadence-official_protoc_gen_validate//validate:cc_validate",
+            "@com_circadence-official_protoc_gen_validate//validate:validate_cc",
             "@com_google_protobuf//:protobuf",
             "@com_googlesource_code_re2//:re2",
         ],
         copts = copts + select({
-            "@com_envoyproxy_protoc_gen_validate//bazel:windows_x86_64": ["-DWIN32"],
+            "@com_circadence-official_protoc_gen_validate//bazel:windows_x86_64": ["-DWIN32"],
             "//conditions:default": [],
         }),
         alwayslink = 1,

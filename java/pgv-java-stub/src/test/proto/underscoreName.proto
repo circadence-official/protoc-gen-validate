@@ -1,8 +1,8 @@
 syntax = "proto3";
-package io.envoyproxy.pgv.grpc;
+package io.circadence-official.pgv.grpc;
 
 option java_multiple_files = true;
-option java_package = "io.envoyproxy.pgv.validate";
+option java_package = "io.circadence-official.pgv.validate";
 import "validate/validate.proto";
 
 message MessageNameWith_Underscore {

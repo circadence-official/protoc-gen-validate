@@ -71,7 +71,7 @@ Installing PGV can currently only be done from source:
 
 ```sh
 # fetches this repo into $GOPATH
-go get -d github.com/envoyproxy/protoc-gen-validate
+go get -d github.com/circadence-official/protoc-gen-validate
 
 # installs PGV into $GOPATH/bin
 make build
@@ -95,7 +95,7 @@ Go generation should occur into the same output path as the official plugin. For
 protoc \
   -I . \
   -I ${GOPATH}/src \
-  -I ${GOPATH}/src/github.com/envoyproxy/protoc-gen-validate \
+  -I ${GOPATH}/src/github.com/circadence-official/protoc-gen-validate \
   --go_out=":../generated" \
   --validate_out="lang=go:../generated" \
   example.proto
@@ -119,7 +119,7 @@ following to your pom.xml or build.gradle.
 ```xml
 <dependencies>
     <dependency>
-        <groupId> io.envoyproxy.protoc-gen-validate</groupId>
+        <groupId> io.circadence-official.protoc-gen-validate</groupId>
         <artifactId>pgv-java-stub</artifactId>
         <version>${pgv.version}</version>
     </dependency>
@@ -150,7 +150,7 @@ following to your pom.xml or build.gradle.
                     <configuration>
                         <pluginParameter>lang=java</pluginParameter>
                         <pluginId>java-pgv</pluginId>
-                        <pluginArtifact>io.envoyproxy.protoc-gen-validate:protoc-gen-validate:${pgv.version}:exe:${os.detected.classifier}</pluginArtifact>
+                        <pluginArtifact>io.circadence-official.protoc-gen-validate:protoc-gen-validate:${pgv.version}:exe:${os.detected.classifier}</pluginArtifact>
                     </configuration>
                 </execution>
             </executions>
@@ -173,7 +173,7 @@ protobuf {
 
     plugins {
         javapgv {
-            artifact = "io.envoyproxy.protoc-gen-validate:protoc-gen-validate:${pgv.version}"
+            artifact = "io.circadence-official.protoc-gen-validate:protoc-gen-validate:${pgv.version}"
         }
     }
 
@@ -867,7 +867,7 @@ bazel test //tests/...
 
 ### Docker
 
-PGV comes with a [Dockerfile](/Dockerfile) for consistent development tooling and CI. The main entrypoint is `make` with `quick` as the default target. This repo should be volumed into `/go/src/github.com/envoyproxy/protoc-gen-validate` for the proper behavior.
+PGV comes with a [Dockerfile](/Dockerfile) for consistent development tooling and CI. The main entrypoint is `make` with `quick` as the default target. This repo should be volumed into `/go/src/github.com/circadence-official/protoc-gen-validate` for the proper behavior.
 
 ```sh
 # build the image
@@ -875,12 +875,12 @@ docker build -t lyft/protoc-gen-validate .
 
 # executes the default make target: quick
 docker run --rm \
-  -v $(PWD):/go/src/github.com/envoyproxy/protoc-gen-validate \
+  -v $(PWD):/go/src/github.com/circadence-official/protoc-gen-validate \
   lyft/protoc-gen-validate
 
 # executes the 'build' & 'generate-testdata' make targets
 docker run --rm \
-  -v $(PWD):/go/src/github.com/envoyproxy/protoc-gen-validate \
+  -v $(PWD):/go/src/github.com/circadence-official/protoc-gen-validate \
   lyft/protoc-gen-validate \
   build generate-testdata
 ```

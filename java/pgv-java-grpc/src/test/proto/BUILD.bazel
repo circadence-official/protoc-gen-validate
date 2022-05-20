@@ -3,7 +3,7 @@ load("@io_bazel_rules_go//proto:def.bzl", "go_proto_library")
 load("@rules_proto//proto:defs.bzl", "proto_library")
 
 proto_library(
-    name = "io_envoyproxy_pgv_grpc_proto",
+    name = "io_circadence-official_pgv_grpc_proto",
     srcs = [
         "GooDBYe.proto",
         "hello.proto",
@@ -13,18 +13,18 @@ proto_library(
 )
 
 go_proto_library(
-    name = "io_envoyproxy_pgv_grpc_go_proto",
+    name = "io_circadence-official_pgv_grpc_go_proto",
     compilers = ["@io_bazel_rules_go//proto:go_grpc"],
-    importpath = "github.com/envoyproxy/protoc-gen-validate/java/pgv-java-grpc/src/test/proto",
-    proto = ":io_envoyproxy_pgv_grpc_proto",
+    importpath = "github.com/circadence-official/protoc-gen-validate/java/pgv-java-grpc/src/test/proto",
+    proto = ":io_circadence-official_pgv_grpc_proto",
     visibility = ["//visibility:public"],
     deps = ["//validate"],
 )
 
 go_library(
     name = "proto",
-    embed = [":io_envoyproxy_pgv_grpc_go_proto"],
-    importpath = "github.com/envoyproxy/protoc-gen-validate/java/pgv-java-grpc/src/test/proto",
+    embed = [":io_circadence-official_pgv_grpc_go_proto"],
+    importpath = "github.com/circadence-official/protoc-gen-validate/java/pgv-java-grpc/src/test/proto",
     visibility = ["//visibility:public"],
 )
 

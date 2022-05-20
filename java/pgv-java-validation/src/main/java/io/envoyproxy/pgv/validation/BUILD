@@ -5,8 +5,8 @@ java_library(
     srcs = glob(["*.java"]),
     visibility = ["//tests/harness:__subpackages__"],
     deps = [
-        "//java/pgv-java-stub/src/main/java/io/envoyproxy/pgv",
-        "//java/pgv-java-validation/src/main/java/io/envoyproxy/pgv",
+        "//java/pgv-java-stub/src/main/java/io/circadence-official/pgv",
+        "//java/pgv-java-validation/src/main/java/io/circadence-official/pgv",
         "//tests/harness:harness_java_proto",
         "//tests/harness/cases:cases_java_proto",
         "//tests/harness/cases:java",

@@ -35,28 +35,28 @@ const durationTpl = `{{ $f := .Field }}{{ $r := .Rules -}}
 {{- template "required" . -}}
 
 {{- if $r.Const }}
-			if ({{ hasAccessor . }}) io.envoyproxy.pgv.ConstantValidation.constant("{{ $f.FullyQualifiedName }}", {{ accessor . }}, {{ constantName . "Const" }});
+			if ({{ hasAccessor . }}) io.circadence-official.pgv.ConstantValidation.constant("{{ $f.FullyQualifiedName }}", {{ accessor . }}, {{ constantName . "Const" }});
 {{- end -}}
 {{- if and (or $r.Lt $r.Lte) (or $r.Gt $r.Gte)}}
-			if ({{ hasAccessor . }}) io.envoyproxy.pgv.ComparativeValidation.range("{{ $f.FullyQualifiedName }}", {{ accessor . }}, {{ if $r.Lt }}{{ constantName . "Lt" }}{{ else }}null{{ end }}, {{ if $r.Lte }}{{ constantName . "Lte" }}{{ else }}null{{ end }}, {{ if $r.Gt }}{{ constantName . "Gt" }}{{ else }}null{{ end }}, {{ if $r.Gte }}{{ constantName . "Gte" }}{{ else }}null{{ end }}, com.google.protobuf.util.Durations.comparator());
+			if ({{ hasAccessor . }}) io.circadence-official.pgv.ComparativeValidation.range("{{ $f.FullyQualifiedName }}", {{ accessor . }}, {{ if $r.Lt }}{{ constantName . "Lt" }}{{ else }}null{{ end }}, {{ if $r.Lte }}{{ constantName . "Lte" }}{{ else }}null{{ end }}, {{ if $r.Gt }}{{ constantName . "Gt" }}{{ else }}null{{ end }}, {{ if $r.Gte }}{{ constantName . "Gte" }}{{ else }}null{{ end }}, com.google.protobuf.util.Durations.comparator());
 {{- else -}}
 {{- if $r.Lt }}
-			if ({{ hasAccessor . }}) io.envoyproxy.pgv.ComparativeValidation.lessThan("{{ $f.FullyQualifiedName }}", {{ accessor . }}, {{ constantName . "Lt" }}, com.google.protobuf.util.Durations.comparator());
+			if ({{ hasAccessor . }}) io.circadence-official.pgv.ComparativeValidation.lessThan("{{ $f.FullyQualifiedName }}", {{ accessor . }}, {{ constantName . "Lt" }}, com.google.protobuf.util.Durations.comparator());
 {{- end -}}
 {{- if $r.Lte }}
-			if ({{ hasAccessor . }}) io.envoyproxy.pgv.ComparativeValidation.lessThanOrEqual("{{ $f.FullyQualifiedName }}", {{ accessor . }}, {{ constantName . "Lte" }}, com.google.protobuf.util.Durations.comparator());
+			if ({{ hasAccessor . }}) io.circadence-official.pgv.ComparativeValidation.lessThanOrEqual("{{ $f.FullyQualifiedName }}", {{ accessor . }}, {{ constantName . "Lte" }}, com.google.protobuf.util.Durations.comparator());
 {{- end -}}
 {{- if $r.Gt }}
-			if ({{ hasAccessor . }}) io.envoyproxy.pgv.ComparativeValidation.greaterThan("{{ $f.FullyQualifiedName }}", {{ accessor . }}, {{ constantName . "Gt" }}, com.google.protobuf.util.Durations.comparator());
+			if ({{ hasAccessor . }}) io.circadence-official.pgv.ComparativeValidation.greaterThan("{{ $f.FullyQualifiedName }}", {{ accessor . }}, {{ constantName . "Gt" }}, com.google.protobuf.util.Durations.comparator());
 {{- end -}}
 {{- if $r.Gte }}
-			if ({{ hasAccessor . }}) io.envoyproxy.pgv.ComparativeValidation.greaterThanOrEqual("{{ $f.FullyQualifiedName }}", {{ accessor . }}, {{ constantName . "Gte" }}, com.google.protobuf.util.Durations.comparator());
+			if ({{ hasAccessor . }}) io.circadence-official.pgv.ComparativeValidation.greaterThanOrEqual("{{ $f.FullyQualifiedName }}", {{ accessor . }}, {{ constantName . "Gte" }}, com.google.protobuf.util.Durations.comparator());
 {{- end -}}
 {{- end -}}
 {{- if $r.In }}
-			if ({{ hasAccessor . }}) io.envoyproxy.pgv.CollectiveValidation.in("{{ $f.FullyQualifiedName }}", {{ accessor . }}, {{ constantName . "In" }});
+			if ({{ hasAccessor . }}) io.circadence-official.pgv.CollectiveValidation.in("{{ $f.FullyQualifiedName }}", {{ accessor . }}, {{ constantName . "In" }});
 {{- end -}}
 {{- if $r.NotIn }}
-			if ({{ hasAccessor . }}) io.envoyproxy.pgv.CollectiveValidation.notIn("{{ $f.FullyQualifiedName }}", {{ accessor . }}, {{ constantName . "NotIn" }});
+			if ({{ hasAccessor . }}) io.circadence-official.pgv.CollectiveValidation.notIn("{{ $f.FullyQualifiedName }}", {{ accessor . }}, {{ constantName . "NotIn" }});
 {{- end -}}
 `

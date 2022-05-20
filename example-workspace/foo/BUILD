@@ -1,4 +1,4 @@
-load("@com_envoyproxy_protoc_gen_validate//bazel:pgv_proto_library.bzl", "pgv_cc_proto_library")
+load("@com_circadence-official_protoc_gen_validate//bazel:pgv_proto_library.bzl", "pgv_cc_proto_library")
 load("@com_google_protobuf//:protobuf.bzl", "py_proto_library")
 
 package(
@@ -8,7 +8,7 @@ package(
 proto_library(
     name = "bar_proto",
     srcs = ["bar.proto"],
-    deps = ["@com_envoyproxy_protoc_gen_validate//validate:validate_proto"],
+    deps = ["@com_circadence-official_protoc_gen_validate//validate:validate_proto"],
 )
 
 pgv_cc_proto_library(
@@ -19,7 +19,7 @@ pgv_cc_proto_library(
 proto_library(
     name = "baz_proto",
     srcs = ["subdir_without_package/baz.proto"],
-    deps = ["@com_envoyproxy_protoc_gen_validate//validate:validate_proto"],
+    deps = ["@com_circadence-official_protoc_gen_validate//validate:validate_proto"],
 )
 
 pgv_cc_proto_library(
@@ -37,7 +37,7 @@ py_proto_library(
     name = "bar_py_proto",
     srcs = ["bar.proto"],
     deps = [
-        "@com_envoyproxy_protoc_gen_validate//validate:validate_py",
+        "@com_circadence-official_protoc_gen_validate//validate:validate_py",
         "@com_google_protobuf//:protobuf_python",
     ],
 )

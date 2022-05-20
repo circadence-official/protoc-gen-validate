@@ -1,4 +1,4 @@
-workspace(name = "com_envoyproxy_protoc_gen_validate")
+workspace(name = "com_circadence-official_protoc_gen_validate")
 
 load("//bazel:repositories.bzl", "pgv_dependencies")
 

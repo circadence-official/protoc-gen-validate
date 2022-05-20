@@ -1,7 +1,7 @@
-package io.envoyproxy.pgv.grpc;
+package io.circadence-official.pgv.grpc;
 
-import io.envoyproxy.pgv.ValidationException;
-import io.envoyproxy.pgv.ValidatorIndex;
+import io.circadence-official.pgv.ValidationException;
+import io.circadence-official.pgv.ValidatorIndex;
 import io.grpc.*;
 
 /**

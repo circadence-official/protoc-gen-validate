@@ -9,7 +9,7 @@ def _pgv_pip_dependencies():
     # into @pgv_pip_deps//:requirements.bzl.
     pip_install(
         name = "pgv_pip_deps",
-        requirements = "@com_envoyproxy_protoc_gen_validate//python:requirements.in",
+        requirements = "@com_circadence-official_protoc_gen_validate//python:requirements.in",
     )
 
 def _pgv_go_dependencies():

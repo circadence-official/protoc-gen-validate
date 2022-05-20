@@ -16,7 +16,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
     "NEXT": "<next-version>-SNAPSHOT",
     "GIT_USER_EMAIL": "envoy-bot@users.noreply.github.com",
     "GIT_USER_NAME": "Via CircleCI"
-}}' "https://circleci.com/api/v1.1/project/github/envoyproxy/protoc-gen-validate/tree/main?circle-token=<my-token>"
+}}' "https://circleci.com/api/v1.1/project/github/circadence-official/protoc-gen-validate/tree/main?circle-token=<my-token>"
 ```
 
 Releasing from versioned tags is similar. To release version `vX.Y.Z`, first
@@ -28,7 +28,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
     "CIRCLE_JOB": "javabuild",
     "GIT_USER_EMAIL": "envoy-bot@users.noreply.github.com",
     "GIT_USER_NAME": "Via CircleCI"
-}}' "https://circleci.com/api/v1.1/project/github/envoyproxy/protoc-gen-validate/tree/v.X.Y.Z?circle-token=<my-token>"
+}}' "https://circleci.com/api/v1.1/project/github/circadence-official/protoc-gen-validate/tree/v.X.Y.Z?circle-token=<my-token>"
 ```
 
 The `javabuild` CI flow will use the version number from the tag to deploy to

@@ -39,7 +39,7 @@ py_binary(
     srcs_version = "PY3",
     deps = [
         "@com_google_protobuf//:protobuf_python",
-        "@com_envoyproxy_protoc_gen_validate//python:validator_py",
+        "@com_circadence-official_protoc_gen_validate//python:validator_py",
         "//foo:bar_py_proto",
     ],
 )

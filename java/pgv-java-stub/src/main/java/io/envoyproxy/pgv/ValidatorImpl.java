@@ -1,4 +1,4 @@
-package io.envoyproxy.pgv;
+package io.circadence-official.pgv;
 
 /**
  * {@code Validator} is the base interface for all generated PGV validators.

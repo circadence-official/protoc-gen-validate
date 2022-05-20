@@ -6,7 +6,7 @@ import (
 	"time"
 	"unicode/utf8"
 
-	"github.com/envoyproxy/protoc-gen-validate/validate"
+	"github.com/circadence-official/protoc-gen-validate/validate"
 	"github.com/lyft/protoc-gen-star"
 	"google.golang.org/protobuf/proto"
 	"google.golang.org/protobuf/types/known/durationpb"

@@ -13,7 +13,7 @@ const oneOfTpl = `
 				{{ end -}}
 				{{- if required . }}
 				default: 
-					io.envoyproxy.pgv.RequiredValidation.required("{{ .FullyQualifiedName }}", null);
+					io.circadence-official.pgv.RequiredValidation.required("{{ .FullyQualifiedName }}", null);
 				{{- end }}
 			}
 `

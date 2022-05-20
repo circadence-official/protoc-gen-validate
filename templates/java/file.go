@@ -8,7 +8,7 @@ package {{ javaPackage .File }};
 {{ if isOfFileType . }}
 @SuppressWarnings("all")
 public class {{ classNameFile . }}Validator {
-	public static io.envoyproxy.pgv.ValidatorImpl validatorFor(Class clazz) {
+	public static io.circadence-official.pgv.ValidatorImpl validatorFor(Class clazz) {
 		{{ range .AllMessages }}
 		{{ if not (ignored .) -}}
 		if (clazz.equals({{ qualifiedName . }}.class)) return new {{ simpleName .}}Validator();
@@ -26,8 +26,8 @@ public class {{ classNameFile . }}Validator {
 * Validates {@code {{ simpleName . }}} protobuf objects.
 */
 @SuppressWarnings("all")
-public class {{ classNameMessage .}}Validator implements io.envoyproxy.pgv.ValidatorImpl<{{ qualifiedName . }}>{
-	public static io.envoyproxy.pgv.ValidatorImpl validatorFor(Class clazz) {
+public class {{ classNameMessage .}}Validator implements io.circadence-official.pgv.ValidatorImpl<{{ qualifiedName . }}>{
+	public static io.circadence-official.pgv.ValidatorImpl validatorFor(Class clazz) {
 		if (clazz.equals({{ qualifiedName . }}.class)) return new {{ simpleName .}}Validator();
 		{{ range .AllMessages }}
 		{{ if not (ignored .) -}}

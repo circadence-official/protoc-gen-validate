@@ -5,7 +5,7 @@ const msgTpl = `
 	/**
 	 * Validates {@code {{ simpleName . }}} protobuf objects.
 	 */
-	public static class {{ simpleName . }}Validator implements io.envoyproxy.pgv.ValidatorImpl<{{ qualifiedName . }}> {
+	public static class {{ simpleName . }}Validator implements io.circadence-official.pgv.ValidatorImpl<{{ qualifiedName . }}> {
 		{{- template "msgInner" . -}}
 	}
 {{- end -}}
@@ -19,7 +19,7 @@ const msgInnerTpl = `
 		{{ template "oneOfConst" . }}
 	{{ end }}
 
-	public void assertValid({{ qualifiedName . }} proto, io.envoyproxy.pgv.ValidatorIndex index) throws io.envoyproxy.pgv.ValidationException {
+	public void assertValid({{ qualifiedName . }} proto, io.circadence-official.pgv.ValidatorIndex index) throws io.circadence-official.pgv.ValidationException {
 	{{ if disabled . }}
 		// Validate is disabled for {{ simpleName . }}
 		return;

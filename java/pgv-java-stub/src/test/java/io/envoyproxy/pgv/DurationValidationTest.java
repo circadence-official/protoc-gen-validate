@@ -1,4 +1,4 @@
-package io.envoyproxy.pgv;
+package io.circadence-official.pgv;
 
 import com.google.protobuf.Duration;
 import com.google.protobuf.util.Durations;

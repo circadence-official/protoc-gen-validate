@@ -11,7 +11,7 @@ import (
 	"google.golang.org/protobuf/types/known/durationpb"
 	"google.golang.org/protobuf/types/known/timestamppb"
 
-	"github.com/envoyproxy/protoc-gen-validate/templates/shared"
+	"github.com/circadence-official/protoc-gen-validate/templates/shared"
 	pgs "github.com/lyft/protoc-gen-star"
 	pgsgo "github.com/lyft/protoc-gen-star/lang/go"
 )
@@ -320,7 +320,7 @@ func (fns goSharedFuncs) externalEnums(file pgs.File) []pgs.Enum {
 				en = fld.Type().Element().Enum()
 			}
 
-			if en != nil && en.Package().ProtoName() != fld.Package().ProtoName() && fns.PackageName(en) != fns.PackageName(fld) {
+			if en != nil && en.Package().ProtoName() != fld.Package().ProtoName() {
 				out = append(out, en)
 			}
 		}
